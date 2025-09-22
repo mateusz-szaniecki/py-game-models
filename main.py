@@ -44,9 +44,9 @@ def main() -> None:
         bio = player_data.get("bio", "")
 
         Player.objects.get_or_create(
-            email=player_data["email"],
+            nickname=player_name,
             defaults={
-                "nickname": player_name,
+                "email": player_data.get("email"),
                 "race": race,
                 "guild": guild,
                 "bio": bio,
